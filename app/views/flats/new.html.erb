@@ -1,13 +1,40 @@
-<h1>Post your flat</h1>
 
-<%= simple_form_for [@user, @flat] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :city %>
-  <%= f.input :address %>
-  <%= f.input :picture %>
-  <%= f.input :description %>
-  <%= f.input :price_night %>
-  <%= f.submit "POST", class: "btn btn-primary" %>
-<% end %>
-<br>
-<%= link_to 'Back', root_path %>
+<div class="container">
+  <h1>Post your flat</h1>
+
+  <%= simple_form_for [@user, @flat] do |f| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :title %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :city %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :address %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :picture %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <%= f.input :description %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-2">
+        <%= f.input :price_night, :label => "Price per night" %>
+      </div>
+    </div>
+    <%= f.submit "POST", class: "btn btn-primary" %>
+  <% end %>
+  <br>
+  <%= link_to 'Back', root_path %>
+</div>
