@@ -1,2 +1,21 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<div class="container">
+  <div class="wrapper-show">
+    <div class="card-flat">
+   <%= cl_image_tag @flat.picture %>
+    <div class="card-flat-infos">
+      <div>
+        <h1><%= @flat.title %></h1>
+
+        <h2><em><%= @flat.address %></em></h2>
+      </div>
+    </div>
+      <h3 class="card-flat-description"> <%= @flat.description %></h3>
+      <div class="card-flat-pricing"><h1>€ <%= @flat.price_night %></h1>
+        <h2>per night</h2>
+      </div>
+      <h2 class="card-flat-link"><%= link_to "Go to home page", flats_path %></h2>
+    </div>
+  </div>
+</div>
+
+
