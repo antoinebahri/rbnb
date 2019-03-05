@@ -1,14 +1,21 @@
-<div class="card-flat">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-flat-infos">
-    <div>
-      <h2><%= @flat.title %></h2>
-      <p><%= @flat.description %></p>
+<div class="container">
+  <div class="wrapper-show">
+    <div class="card-flat">
+   <%= cl_image_tag @flat.picture %>
+    <div class="card-flat-infos">
+      <div>
+        <h1><%= @flat.title %></h1>
+
+        <h2><em><%= @flat.address %></em></h2>
+      </div>
     </div>
-    <h2 class="card-flat-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-flat-user avatar-bordered"/>
+      <h3 class="card-flat-description"> <%= @flat.description %></h3>
+      <div class="card-flat-pricing"><h1>€ <%= @flat.price_night %></h1>
+        <h2>per night</h2>
+      </div>
+      <h2 class="card-flat-link"><%= link_to "Go to home page", flats_path %></h2>
+    </div>
   </div>
 </div>
 
 
-<p>Find me in app/views/flats/show.html.erb</p>
