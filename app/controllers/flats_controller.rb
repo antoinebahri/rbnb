@@ -17,13 +17,15 @@ class FlatsController < ApplicationController
       redirect_to flat_path(@flat)
     else
       render :new
+    end
   end
 
   def update
-    if @flat.update(restaurant_params)
+    if @flat.update(flat_params)
       redirect_to flat_path(@flat)
     else
       render :edit
+    end
   end
 
   def destroy
@@ -31,10 +33,9 @@ class FlatsController < ApplicationController
     @flat.destroy
   end
 
-private
+  private
 
   def flat_params
-  params.require(:flat).permit(:address, :city, :price_night, :description, :picture)
+    params.require(:flat).permit(:title, :address, :city, :price_night, :description, :picture)
   end
-
 end
