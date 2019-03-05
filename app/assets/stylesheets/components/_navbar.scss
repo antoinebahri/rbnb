@@ -27,6 +27,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .tabs-underlined {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .tabs-underlined .tab-underlined {
+    padding: 8px;
+    margin: 8px 16px;
+    opacity: .4;
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+  }
+/*
+  .tabs-underlined .tab-underlined.active {
+    opacity: 1;
+    border-bottom: 3px solid white;
+  }
+ */
+  .tab-underlined {
+    color: gray;
+  }
+  .tab-underlined:hover {
+    opacity: 1;
+    color: gray;
+    border-bottom: 3px solid gray;
+  }
 }
 
 /* Basic navbar item */
@@ -81,4 +110,3 @@
   top: 0;
   width: 100%;
 }
-
