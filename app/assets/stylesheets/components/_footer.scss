@@ -24,3 +24,13 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: center;
+  text-align: center;
+  height: 100px;
+  padding: 0px 0px;
+  width: 100vw;
+}
