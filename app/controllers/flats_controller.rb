@@ -17,6 +17,7 @@ class FlatsController < ApplicationController
       redirect_to flat_path(@flat)
     else
       render :new
+    end
   end
 
   def update
@@ -24,6 +25,7 @@ class FlatsController < ApplicationController
       redirect_to flat_path(@flat)
     else
       render :edit
+    end
   end
 
   def destroy
