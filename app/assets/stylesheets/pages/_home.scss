@@ -2,18 +2,17 @@
 .container-cards {
   width: auto;
   height: 350px;
-  margin-top: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 20px;
+  margin: 10px 150px;
+  display: flex;
+  justify-content: space-around;
 }
 
 h4 {
-  margin-bottom: 0px;
-  margin-left: 35px;
-  margin-top: 30px;
-  color: #505050;
-  font-size: 15px;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  color: #696969;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 1px;
   font-weight: bolder;
-  letter-spacing: 0.5px;
 }
