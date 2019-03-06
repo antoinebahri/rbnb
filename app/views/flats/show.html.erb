@@ -1,7 +1,8 @@
 <div class="container">
   <div class="wrapper-show">
     <div class="card-flat">
-      <%= cl_image_tag @flat.picture %>
+      <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @flat.picture %>')" class="image-show">
+      </div>
       <div class="card-flat-infos">
         <div>
           <h1><%= @flat.title %></h1>
@@ -10,7 +11,7 @@
       </div>
 
       <h3 class="card-flat-description"> <%= @flat.description %></h3>
-      <div class="card-flat-pricing" style=" background-color: rgba(255, 255, 255, 0.3);; border-radius: 20px; ">
+      <div class="card-flat-pricing">
         <h1>€ <%= @flat.price_night %></h1>
         <h2>per night</h2>
       </div>
