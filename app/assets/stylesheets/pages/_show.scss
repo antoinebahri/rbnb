@@ -67,6 +67,10 @@
   padding: 16px;
   a {
     color: #ff5b60;
+    :hover {
+    text-decoration: none;
+    color: #ea383e;
+    }
   }
 }
 

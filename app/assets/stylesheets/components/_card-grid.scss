@@ -2,7 +2,9 @@
   background-size: cover;
   background-position: center;
   color: rgba(125,125,125,1);
-  font-size: 25px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  :hover {
+    text-decoration: none;
+  }
 }
