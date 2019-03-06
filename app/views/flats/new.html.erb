@@ -1,41 +1,31 @@
 
 <div class="container">
-  <h1>Post your flat</h1>
+  <div class="wrapper-new">
+    <div class="form-new">
+      <h1 style="color: #ff5b60;">Post your flat</h1>
 
-  <%= simple_form_for [@user, @flat] do |f| %>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :title %>
-      </div>
+      <%= simple_form_for [@user, @flat] do |f| %>
+            <%= f.input :title %>
+
+            <%= f.input :city %>
+
+            <%= f.input :address %>
+
+            <%= f.input :picture %>
+            <%= f.input :picture_cache, as: :hidden %>
+
+            <%= f.input :description %>
+
+            <%= f.input :price_night, :label => "Price per night" %>
+            <div class="bottom">
+
+      <%= link_to 'Back', root_path %>
+      <%= f.submit "Post", class: "button-rbnb" %>
+      <br>
+
+      <% end %>
+
+        </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :city %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :address %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :picture %>
-        <%= f.input :picture_cache, as: :hidden %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :description %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-2">
-        <%= f.input :price_night, :label => "Price per night" %>
-      </div>
-    </div>
-    <%= f.submit "Post", class: "btn btn-primary" %>
-  <% end %>
-  <br>
-  <%= link_to 'Back', root_path %>
+  </div>
 </div>
