@@ -1,41 +1,32 @@
-
+<div style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1498085245356-7c3cda3b412f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1734&q=80');">
 <div class="container">
-  <h1>Edit your flat</h1>
+  <div class="wrapper-new">
+    <div class="form-new">
+      <h1 style="color: #ff5b60;">Post your flat</h1>
 
-  <%= simple_form_for [@user, @flat] do |f| %>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :title %>
-      </div>
+      <%= simple_form_for [@user, @flat] do |f| %>
+            <%= f.input :title %>
+
+            <%= f.input :city %>
+
+            <%= f.input :address %>
+
+            <%= f.input :picture %>
+            <%= f.input :picture_cache, as: :hidden %>
+
+            <%= f.input :description %>
+
+            <%= f.input :price_night, :label => "Price per night" %>
+            <div class="bottom">
+
+      <%= link_to 'Back', root_path %>
+      <%= f.submit "Post", class: "button-rbnb" %>
+      <br>
+
+      <% end %>
+
+        </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :city %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :address %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :picture %>
-        <%= f.input :picture_cache, as: :hidden %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <%= f.input :description %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-2">
-        <%= f.input :price_night, :label => "Price per night" %>
-      </div>
-    </div>
-    <%= f.submit "Update", class: "btn btn-primary" %>
-  <% end %>
-  <br>
-  <%= link_to 'Back', flat_path(@flat.id) %>
+  </div>
+</div>
 </div>

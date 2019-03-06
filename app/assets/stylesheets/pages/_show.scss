@@ -24,6 +24,10 @@
   font-weight: bold;
   margin: 0;
   color: #ff5b60;
+  :hover {
+    text-decoration: none;
+    color: #ea383e;
+  }
 }
 
 .card-flat p {
