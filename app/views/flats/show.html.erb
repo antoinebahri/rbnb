@@ -1,2 +1,31 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<div class="container">
+  <div class="wrapper-show">
+    <div class="card-flat">
+   <%= cl_image_tag @flat.picture %>
+    <div class="card-flat-infos">
+      <div>
+        <h1><%= @flat.title %></h1>
+
+        <h2><em><%= @flat.address %></em></h2>
+      </div>
+    </div>
+      <h3 class="card-flat-description"> <%= @flat.description %></h3>
+      <div class="card-flat-pricing" style=" background-color: rgba(255, 255, 255, 0.3);; border-radius: 20px; "><h1>€ <%= @flat.price_night %></h1>
+        <h2>per night</h2>
+      </div>
+      <div class="card-flat-link">
+      <h2><%= link_to "Go to home page", flats_path %>
+      </h2>
+      <div class="flat-options">
+      <h2><%= link_to "Edit", edit_flat_path(@flat) %></h2>
+      <%= link_to(flat_path(@flat),:data => {:confirm => "Are you sure you want to delete this flat?",:method => "delete"}) do %>
+      <i class="fas fa-trash" style="margin-left: 20px;"></i>
+  <% end %>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
