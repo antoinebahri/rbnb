@@ -1,0 +1,13 @@
+.button-rbnb {
+  background-color: white;
+  color: #ff5b60;
+  border: 1px solid #ff5b60;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.button-rbnb:hover {
+  opacity: 1;
+}
