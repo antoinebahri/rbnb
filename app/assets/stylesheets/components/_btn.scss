@@ -2,12 +2,14 @@
   background-color: white;
   color: #ff5b60;
   border: 1px solid #ff5b60;
-  padding: 8px 24px;
-  border-radius: 50px;
-  opacity: 0.6;
+  padding: 5px 30px;
+  border-radius: 20px;
   transition: opacity 0.3s ease;
 }
 
 .button-rbnb:hover {
-  opacity: 1;
+  border: 1px solid white;
+  color: white !important;
+  background-color: #ff5b60;
+  color: white;
 }
