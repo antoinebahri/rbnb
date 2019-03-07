@@ -1,22 +1,22 @@
 .wrapper-show {
-  display: flex;
-  justify-content: space-around;
+  // display: flex;
+  // justify-content: space-around;
   margin-top: 35px;
 }
 
 .card-flat {
   overflow: hidden;
   background: white;
-  width: 60%;
+  width: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
   border-radius: 10px;
+  // flex: 1;
 }
 
 .image-show {
   height: 350px;
   width: 100%;
-  object-fit: cover;
   background-size: cover;
 }
 
@@ -43,7 +43,7 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .card-flat-infos .card-flat-user {
