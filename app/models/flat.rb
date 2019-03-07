@@ -6,5 +6,7 @@ class Flat < ApplicationRecord
   validates :city, presence: true
   validates :description, presence: true
   validates :price_night, presence: true
-  # validates :picture, presence: true
+  validates :picture, presence: true
+  has_many :users, through: :bookings
+
 end
