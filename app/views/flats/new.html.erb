@@ -4,7 +4,7 @@
     <div class="form-new">
       <h1 style="color: #ff5b60;">Post your flat</h1>
 
-      <%= simple_form_for [@user, @flat] do |f| %>
+      <%= simple_form_for @flat do |f| %>
             <%= f.input :title %>
 
             <%= f.input :city %>
