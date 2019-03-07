@@ -10,22 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_171420) do
+ActiveRecord::Schema.define(version: 2019_03_07_132845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "flat_id"
+    t.integer "id_user"
+    t.integer "id_flat"
     t.date "start_date"
     t.date "end_date"
     t.integer "total_price"
     t.string "status", default: "Request"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["flat_id"], name: "index_bookings_on_flat_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "flats", force: :cascade do |t|
@@ -52,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_171420) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "picture"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
