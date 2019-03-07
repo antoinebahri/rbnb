@@ -18,25 +18,25 @@ counter=0
 puts 'creating 20 flats'
 5.times do
   url = 'https://source.unsplash.com/collection/1134892'
-  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: Faker::Address.city, price_night: rand(100..5000), description: Faker::Restaurant.description, id_user: rand(1..10), remote_picture_url: url)
+  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: Faker::Address.city, price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: rand(1..10), remote_picture_url: url)
   p flat.title + " created! :)"
 end
 
 5.times do
   url = 'https://source.unsplash.com/collection/1134892'
-  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Barcelona", price_night: rand(100..5000), description: Faker::Restaurant.description, id_user: rand(1..10), remote_picture_url: url)
+  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Barcelona", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: rand(1..10), remote_picture_url: url)
   p flat.title + " created! :)"
 end
 
 5.times do
   url = 'https://source.unsplash.com/collection/1134892'
-  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Madrid", price_night: rand(100..5000), description: Faker::Restaurant.description, id_user: rand(1..10), remote_picture_url: url)
+  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Madrid", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: rand(1..10), remote_picture_url: url)
   p flat.title + " created! :)"
 end
 
 5.times do
   url = 'https://source.unsplash.com/collection/1134892'
-  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Paris", price_night: rand(100..5000), description: Faker::Restaurant.description, id_user: rand(1..10), remote_picture_url: url)
+  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Paris", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: rand(1..10), remote_picture_url: url)
   p flat.title + " created! :)"
 end
 
@@ -47,7 +47,7 @@ end
 
 20.times do
   booking = Booking.new(start_date: Date.strptime('03-06-2019', '%d-%m-%Y'), end_date: Date.strptime('03-07-2019', '%d-%m-%Y'))
-  booking.id_flat = flats_index_array[counter]
+  booking.flat_id = flats_index_array[counter]
   counter += 1
   booking.save
 end
