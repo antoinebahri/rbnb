@@ -1,25 +1,25 @@
 <h4>Discover your next home</h4>
-
 <div class="card-grid">
   <div class="container-cards">
     <div class="row">
-      <% @flats.each do |flat| %>
-
-        <div class="col-xs-12 col-sm-6">
-
-          <%= link_to flat_path(flat) do %>
-          <div class="card">
-            <div class="card-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path flat.picture %>');">
-              <div class="card-location"><%= flat.city %></div>
-              <div class="card-title"><%= flat.title %></div>
-            </div>
-            <div class="card-infos">
-              <%= cl_image_tag flat.user.picture, height: 400, width: 400, crop: :fill, class: "card-avatar" %>
-              <div class="card-price">€<%= flat.price_night %> per night</div>
-            </div>
-          <% end %>
+      <% if @flats.empty? %>
+        <h4>Sorry, currently we don't have availability in your city!</h4>
+      <% else %>
+        <% @flats.each do |flat| %>
+          <div class="col-xs-12 col-sm-6">
+            <%= link_to flat_path(flat) do %>
+              <div class="card">
+                <div class="card-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path flat.picture %>');">
+                  <div class="card-location"><%= flat.city %></div>
+                  <div class="card-title"><%= flat.title %></div>
+                </div>
+                <div class="card-infos">
+                  <%= cl_image_tag flat.user.picture, height: 400, width: 400, crop: :fill, class: "card-avatar" %>
+                  <div class="card-price">€<%= flat.price_night %> per night</div>
+                </div>
+            <% end %>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
