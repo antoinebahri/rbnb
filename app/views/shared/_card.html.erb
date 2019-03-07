@@ -4,7 +4,7 @@
     <div class="card-title">Lake cabin</div>
   </div>
   <div class="card-infos">
-    <img src='https://kitt.lewagon.com/placeholder/users/ClaraMorgen' class="card-avatar"/>
+    <%= cl_image_tag current_user.picture, height: 400, width: 400, crop: :fill, class: "avatar-card" %>
     image_tag("/icons/icon.gif", class: "menu_icon")
     <div class="card-price">150€ /night</div>
   </div>

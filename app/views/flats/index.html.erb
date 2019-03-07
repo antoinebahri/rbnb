@@ -14,7 +14,7 @@
               <div class="card-title"><%= flat.title %></div>
             </div>
             <div class="card-infos">
-              <img src='https://kitt.lewagon.com/placeholder/users/ClaraMorgen' class="card-avatar"/>
+              <%= cl_image_tag current_user.picture, height: 400, width: 400, crop: :fill, class: "card-avatar" %>
               <div class="card-price">€<%= flat.price_night %> per night</div>
             </div>
           <% end %>
