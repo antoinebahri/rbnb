@@ -1,18 +1,14 @@
-
-    <div class="footer">
-      <div class="footer-links">
-        <div class="airbnb-logo-footer">
-          <a href="/" class="navbar-wagon-brand">
-            <%= image_tag "logo.png" %>
-          </a>
-        </div>
-        <div class="social-links-footer">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
+<div class="footer">
+  <div class="footer-links">
+    <div class="airbnb-logo-footer">
+      <%= link_to (image_tag "logo.png"), root_path, class: "navbar-wagon-brand" %>
     </div>
-
+    <div class="social-links-footer">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
