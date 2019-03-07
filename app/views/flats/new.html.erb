@@ -1,32 +1,32 @@
 <div style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1498085245356-7c3cda3b412f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1734&q=80');">
-<div class="container">
-  <div class="wrapper-new">
-    <div class="form-new">
-      <h1 style="color: #ff5b60;">Post your flat</h1>
+  <div class="container">
+    <div class="wrapper-new">
+      <div class="form-new">
+        <h1 style="color: #ff5b60;">Post your flat</h1>
 
       <%= simple_form_for @flat do |f| %>
-            <%= f.input :title %>
+        <%= f.input :title %>
 
-            <%= f.input :city %>
+        <%= f.input :city %>
 
-            <%= f.input :address %>
+        <%= f.input :address %>
 
-            <%= f.input :picture %>
-            <%= f.input :picture_cache, as: :hidden %>
+        <%= f.input :picture %>
+        <%= f.input :picture_cache, as: :hidden %>
 
-            <%= f.input :description %>
+        <%= f.input :description %>
 
-            <%= f.input :price_night, :label => "Price per night" %>
-            <div class="bottom">
+        <%= f.input :price_night, :label => "Price per night" %>
+        <div class="bottom">
 
-      <%= link_to 'Back', root_path %>
-      <%= f.submit "Post", class: "button-rbnb" %>
-      <br>
+          <%= link_to 'Back', root_path %>
+          <%= f.submit "Post", class: "button-rbnb" %>
+          <br>
 
-      <% end %>
+          <% end %>
 
         </div>
+      </div>
     </div>
   </div>
-</div>
 </div>
