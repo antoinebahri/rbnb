@@ -3,11 +3,13 @@
     <div class="form-new">
       <h1 style="color: #ff5b60;">Booking your next trip</h1>
 
-      <%= simple_form_for [@user, @booking] do |f| %>
-            <%= f.input :start_date %>
+      <%= simple_form_for [@flat, @booking] do |f| %>
+            <%= f.input :start_date, as: :date, html5: true %>
 
-            <%= f.input :end_date %>
+            <%= f.input :end_date, as: :date, html5: true %>
+
             <div class="bottom">
+
 
       <%= link_to 'Back', flat_path(@flat) %>
       <%= f.submit "Confirm", class: "button-rbnb" %>
