@@ -13,6 +13,7 @@ Booking.destroy_all
 
 # creating an empty array for the indices of the flats in db and setting up counter
 flats_index_array = []
+puts "creating some arrays"
 users_index_array = []
 counter=0
 
