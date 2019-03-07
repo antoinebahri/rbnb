@@ -7,7 +7,14 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+
   root to: 'pages#home'
+
+  get '/contact', to: 'pages#contact'
+  get '/dashboard/trips', to: 'pages#trips'
+  get '/dashboard/bookings', to: 'pages#bookings'
+  get '/dashboard/places', to: 'pages#places'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
@@ -36,3 +43,7 @@ end
 #                   PATCH  /flats/:id(.:format)                                  flats#update
 #                   PUT    /flats/:id(.:format)                                  flats#update
 #                   DELETE /flats/:id(.:format)                                  flats#delete
+# dashboard_trips   GET    /dashboard/trips(.:format)                            pages#trips
+# dashboard_bookingsGET    /dashboard/bookings(.:format)                         pages#bookings
+# dashboard_places  GET    /dashboard/places(.:format)                           pages#places
+
