@@ -16,6 +16,8 @@
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "last_name" }%>
+            <%= f.input :picture %>
+            <%= f.input :picture_cache, as: :hidden %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
