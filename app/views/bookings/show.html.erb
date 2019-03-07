@@ -1,2 +1,39 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<div class="container">
+  <div class="row">
+  <div class="wrapper-show col-sm-12 col-md-8 col-md-offset-2">
+    <div class="card-flat">
+      <div style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path @booking.flat.picture %>')" class="image-show">
+      </div>
+      <div class="card-flat-infos">
+        <div>
+          <h1>Booking Requested</h1>
+          <h2><em><%= @booking.flat.title %></em></h2>
+          <h2 style="color: grey;"><em>from <%= @booking.start_date %> to <%= @booking.end_date %></em></h2>
+        </div>
+      </div>
+
+      <% if @booking.status == "Request" %>
+      <h3 class="card-flat-description"> You are one step away from your next holiday.</h3>
+      <h4 style="margin-top: 10px;">Your host will reply to you soon.</h4>
+      <% elsif @booking.status == "Confirmed" %>
+      <h4 style="margin-top: 10px;">Prepare your luggage! Your host has confirmed your booking.</h4>
+      <% else %>
+      <h4 style="margin-top: 10px; color: red;">We are sorry, your host has declined your request.</h4>
+      <% end %>
+      <div class="card-flat-link">
+        <h2 style="margin-top: 5px; font-size: 20px;">
+          <%= link_to "", root_path, class: "fas fa-home" %>
+        </h2>
+        <div class="flat-options">
+          <h2>
+            <%= link_to "", edit_flat_booking_path(@booking), class: "far fa-edit" %>
+          </h2>
+          <%= link_to(flat_booking_path(@booking),:data => {:confirm => "Are you sure you want to cancel this booking?",:method => "delete"}) do %>
+          <i class="fas fa-trash" style="margin-left: 15px;"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
