@@ -1,2 +1,21 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="container">
+  <div class="wrapper-new">
+    <div class="form-new">
+      <h1 style="color: #ff5b60;">Booking your next trip</h1>
+
+      <%= simple_form_for [@user, @booking] do |f| %>
+            <%= f.input :start_date %>
+
+            <%= f.input :end_date %>
+            <div class="bottom">
+
+      <%= link_to 'Back', flat_path(@flat) %>
+      <%= f.submit "Confirm", class: "button-rbnb" %>
+      <br>
+
+      <% end %>
+
+        </div>
+    </div>
+  </div>
+</div>
