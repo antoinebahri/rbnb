@@ -1,12 +1,16 @@
 <div class="container">
-  <div class="wrapper-show">
+  <div class="row">
+  <div class="wrapper-show col-sm-12 col-md-8 col-md-offset-2">
     <div class="card-flat">
-      <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @flat.picture %>')" class="image-show">
+      <div style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path @flat.picture %>')" class="image-show">
       </div>
       <div class="card-flat-infos">
         <div>
           <h1><%= @flat.title %></h1>
           <h2><em><%= @flat.address %></em></h2>
+        </div>
+        <div>
+          <%= link_to 'Book it now', new_flat_booking_path(@flat), class: "button-rbnb"%>
         </div>
       </div>
 
@@ -29,5 +33,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
