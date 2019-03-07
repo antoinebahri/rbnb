@@ -14,7 +14,7 @@
               <div class="card-title"><%= flat.title %></div>
             </div>
             <div class="card-infos">
-              <%= cl_image_tag current_user.picture, height: 400, width: 400, crop: :fill, class: "card-avatar" %>
+              <%= cl_image_tag flat.user.picture, height: 400, width: 400, crop: :fill, class: "card-avatar" %>
               <div class="card-price">€<%= flat.price_night %> per night</div>
             </div>
           <% end %>

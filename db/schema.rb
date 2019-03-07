@@ -16,14 +16,16 @@ ActiveRecord::Schema.define(version: 2019_03_07_132845) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "id_user"
-    t.integer "id_flat"
+    t.bigint "user_id"
+    t.bigint "flat_id"
     t.date "start_date"
     t.date "end_date"
     t.integer "total_price"
     t.string "status", default: "Request"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["flat_id"], name: "index_bookings_on_flat_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "flats", force: :cascade do |t|
