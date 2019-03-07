@@ -3,6 +3,10 @@
 <div class="card-grid">
   <div class="container-cards">
     <div class="row">
+      <% if @flats.empty? %>
+          <h4>Sorry, currently we don't have availability in your city!</h4>
+      <% else %>
+
       <% @flats.each do |flat| %>
 
       <div class="col-xs-12 col-sm-6">
@@ -20,6 +24,7 @@
           <% end %>
         </div>
       </div>
+      <% end %>
       <% end %>
     </div>
   </div>
