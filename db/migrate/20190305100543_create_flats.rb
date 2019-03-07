@@ -5,7 +5,7 @@ class CreateFlats < ActiveRecord::Migration[5.2]
       t.string :city
       t.integer :price_night
       t.string :description
-      t.integer :id_user
+      t.references :user
       t.string :picture
 
       t.timestamps
