@@ -17,9 +17,10 @@
 .image-show {
   height: 350px;
   width: 100%;
+  position: relative;
   background-size: cover;
+  background-position: center;
 }
-
 
 .card-flat h2 {
   font-size: 16px;
@@ -83,4 +84,13 @@
 .flat-options {
   display: flex;
   align-items: center;
+}
+
+#avatar-card-lg {
+ height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }
