@@ -4,9 +4,16 @@
       <h1 style="color: #ff5b60;">Booking your next trip</h1>
 
       <%= simple_form_for [@flat, @booking] do |f| %>
-            <%= f.input :start_date, as: :date, html5: true %>
+            <%= f.input :start_date, as: :date, html5: true, :input_html => { :id => 'start_date' } %>
 
-            <%= f.input :end_date, as: :date, html5: true %>
+            <%= f.input :end_date, as: :date, html5: true, :input_html => { :id => 'end_date' } %>
+
+            <div>
+              <h4>The price per night is <span id="price_night"><%= @flat.price_night%></span>euros</h4>
+            </div>
+            <div id="total_price">
+              <h4>The total price of your stay will appear here</h4>
+            </div>
 
             <div class="bottom">
 
