@@ -30,7 +30,7 @@ end
 puts 'creating 20 flats'
 5.times do
   url = 'https://source.unsplash.com/collection/1134892'
-  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: Faker::Address.city, price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: users_index_array[counter], remote_picture_url: url)
+  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.state, city: Faker::Address.city, price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: users_index_array[counter], remote_picture_url: url)
   p flat.title + " created! :)"
   # flat.user_id =
   counter += 1
@@ -38,7 +38,7 @@ end
 
 5.times do
   url = 'https://source.unsplash.com/collection/1134892'
-  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Barcelona", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: users_index_array[counter], remote_picture_url: url)
+  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.state, city: "Barcelona", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: users_index_array[counter], remote_picture_url: url)
   p flat.title + " created! :)"
   # flat.user_id =
   counter += 1
@@ -46,7 +46,7 @@ end
 
 5.times do
   url = 'https://source.unsplash.com/collection/1134892'
-  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Madrid", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: rand(1..10), remote_picture_url: url)
+  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.state, city: "Madrid", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: rand(1..10), remote_picture_url: url)
   p flat.title + " created! :)"
   flat.user_id = users_index_array[counter]
   counter += 1
@@ -54,7 +54,7 @@ end
 
 5.times do
   url = 'https://source.unsplash.com/collection/1134892'
-  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.full_address, city: "Paris", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: rand(1..10), remote_picture_url: url)
+  flat = Flat.create(title: Faker::TvShows::Simpsons.location, address: Faker::Address.state, city: "Paris", price_night: rand(100..5000), description: Faker::Restaurant.description, user_id: rand(1..10), remote_picture_url: url)
   p flat.title + " created! :)"
   flat.user_id = users_index_array[counter]
   counter += 1
