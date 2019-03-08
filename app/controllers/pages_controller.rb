@@ -41,4 +41,15 @@ class PagesController < ApplicationController
     end
     # raise
   end
+
+  def status_accepted(booking)
+    booking.status = "Accepted"
+    redirect_to dashboard_bookings_path
+  end
+
+  def status_declined(booking)
+    booking.status = "Declined"
+    redirect_to dashboard_bookings_path
+  end
+
 end
