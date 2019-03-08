@@ -1,1 +1,26 @@
-@my_bookings is the array of all your individual bookings
+<section style="margin-top: 30px;">
+  <div class="container">
+    <div class="row">
+      <%= render 'bookings_tabs' %>
+<div class="dash-container">
+  <% @my_bookings.each do |booking| %>
+    <div class="dash-card">
+      <div class="dash-pic-data" >
+        <%= cl_image_tag booking.user.picture, height: 400, width: 400, crop: :fill, class: "avatar" %>
+        </div>
+       <div class="message-body">
+        <p><strong><%=booking.flat.title%></strong></p>
+        <h3>Start date: <%= booking.start_date %></h3>
+        <h3>End date: <%= booking.end_date %></h3>
+      </div>
+      <div class="message-status">
+        <p> <%= booking.status %></p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</section>
+
+
+

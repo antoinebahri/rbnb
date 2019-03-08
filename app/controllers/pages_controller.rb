@@ -39,6 +39,6 @@ class PagesController < ApplicationController
     else
       redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
-    raise
+    # raise
   end
 end
