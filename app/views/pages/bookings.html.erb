@@ -2,33 +2,34 @@
   <div class="container">
     <div class="row">
       <%= render 'bookings_tabs' %>
-<div class="dash-container">
-  <% @my_bookings.each do |booking| %>
-    <div class="dash-card">
-      <div class="dash-pic-data" >
-        <%= cl_image_tag booking.user.picture, height: 400, width: 400, crop: :fill, class: "avatar" %>
+      <div class="dash-container">
+        <% @my_bookings.each do |booking| %>
+        <div class="dash-card">
+          <div class="dash-pic-data" >
+            <%= cl_image_tag booking.user.picture, height: 400, width: 400, crop: :fill, class: "avatar" %>
+          </div>
+          <div class="message-body">
+            <p><strong><%=booking.flat.title%></strong></p>
+            <h3>Start date: <%= booking.start_date %></h3>
+            <h3>End date: <%= booking.end_date %></h3>
+          </div>
+          <div class="message-status">
+            <% if booking.status == "Requested" %>
+            <p><%= booking.status %></p>
+          </div>
+          <% current_flat = booking.flat %>
+          <div class="button">
+            <%= link_to 'Accept', approve_path(booking), method: :patch %>
+          </div>
+          <div class="button">
+            <%= link_to 'Decline', decline_path(booking), method: :patch %>
+          </div>
+        <% else %>
+        <%= booking.status %>
         </div>
-       <div class="message-body">
-        <p><strong><%=booking.flat.title%></strong></p>
-        <h3>Start date: <%= booking.start_date %></h3>
-        <h3>End date: <%= booking.end_date %></h3>
+    <% end %>
       </div>
-      <div class="message-status">
-        <p> <%= booking.status %></p>
-      </div>
-      <% current_flat = booking.flat %>
-      <div class="button" action="pages#status_accepted" method="PATCH">
-        <%= link_to 'Accept', edit_flat_booking_path(current_flat, booking) %>
-      </div>
-      <div class="button" action="pages#status_declined" method="PATCH">
-        <%= link_to 'Decline', edit_flat_booking_path(current_flat, booking) %>
-      </div>
-      </div>
+    <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
 </section>
-
-
-
-<% end %>

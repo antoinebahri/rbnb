@@ -14,7 +14,9 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    raise
     check_for_auth
+
     @booking = Booking.find(params[:flat_id])
   end
 
@@ -48,6 +50,20 @@ class BookingsController < ApplicationController
     redirect_to root_path
   end
 
+  def approve
+    booking = Booking.find(params[:id])
+    booking.status = "Accepted"
+    booking.save
+    redirect_to dashboard_bookings_path
+  end
+
+  def decline
+    booking = Booking.find(params[:id])
+    booking.status = "Declined"
+    booking.save
+    redirect_to dashboard_bookings_path
+  end
+
   private
 
   def booking_params
@@ -59,6 +75,7 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
 
 end
 
