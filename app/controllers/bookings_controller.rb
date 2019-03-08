@@ -16,7 +16,6 @@ class BookingsController < ApplicationController
   def edit
     raise
     check_for_auth
-
     @booking = Booking.find(params[:flat_id])
   end
 
@@ -75,7 +74,4 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
-
-
 end
-
