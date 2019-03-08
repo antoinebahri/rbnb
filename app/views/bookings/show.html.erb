@@ -9,8 +9,6 @@
           <h1>Booking Requested</h1>
           <h2><em><%= @booking.flat.title %></em></h2>
           <h2 style="color: grey;"><em>from <%= @booking.start_date.strftime("%A, %b %d") %> to <%= @booking.end_date.strftime("%A, %b %d") %></em></h2>
-          <h2 style="color: grey;"><em>The total price of your stay is of <%= @booking.flat.total_price %> euros</em></h2>
-        </div>
       </div>
 
       <% if @booking.status == "Requested" %>
