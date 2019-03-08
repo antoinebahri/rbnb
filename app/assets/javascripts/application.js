@@ -1,3 +1,3 @@
 //= require rails-ujs
 //= require_tree .
-//=require hidden_navbar
+// =require hidden_navbar
