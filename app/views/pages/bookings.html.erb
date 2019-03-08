@@ -1,0 +1,12 @@
+<% @my_bookings.each do |booking| %>
+<% current_flat = booking.flat %>
+<div class="status">
+booking.status
+</div>
+<div class="button" action="pages#status_accepted" method:"PATCH">
+<%= link_to 'Accept', edit_flat_booking_path(current_flat, booking) %>
+</div>
+<div class="button" action="pages#status_declined" method:"PATCH">
+<%= link_to 'Decline', edit_flat_booking_path(current_flat, booking) %>
+</div>
+<% end %>
