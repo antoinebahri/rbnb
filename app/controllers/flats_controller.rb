@@ -17,6 +17,7 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    check_for_auth
   end
 
   def show
@@ -31,10 +32,12 @@ class FlatsController < ApplicationController
   end
 
   def edit
+    check_for_auth
     @flat = Flat.find(params[:id])
   end
 
   def create
+    check_for_auth
     @flat = Flat.new(flat_params)
     @flat.user_id = current_user.id
     if @flat.save
@@ -54,6 +57,7 @@ class FlatsController < ApplicationController
   end
 
   def destroy
+    check_for_auth
     @flat = Flat.find(params[:id])
     @flat.destroy
     redirect_to root_path
@@ -63,5 +67,11 @@ class FlatsController < ApplicationController
 
   def flat_params
     params.require(:flat).permit(:title, :address, :city, :price_night, :description, :picture, :latitude, :longitude)
+  end
+
+  def check_for_auth
+    unless current_user
+      redirect_to new_user_session_path
+    end
   end
 end

@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   get '/dashboard/trips', to: 'pages#trips'
   get '/dashboard/bookings', to: 'pages#bookings'
   get '/dashboard/places', to: 'pages#places'
-
+  patch '/bookings/:id/approve', to: 'bookings#approve', as: :approve
+  patch '/bookings/:id/decline', to: 'bookings#decline', as: :decline
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 

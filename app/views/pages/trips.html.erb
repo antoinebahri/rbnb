@@ -1,7 +1,26 @@
-@my_trips.flat
-@my_trips.start_date
-@my_trips.end_date
-@my_trips.total_price
+<section style="margin-top: 30px;">
+  <div class="container">
+    <div class="row">
+      <%= render 'bookings_tabs' %>
 
-@my_trips.flat
+<div class="dash-container">
+  <% @my_trips.each do |trip| %>
+    <div class="dash-card">
+      <div class="dash-pic-data">
+        <div class="dash-pic" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path trip.flat.picture, width: 300, height: 200 %>')">
+        </div>
+      </div>
+       <div class="message-body">
+        <p><strong><%=trip.flat.title%></strong></p>
+        <h3>Start date: <%= trip.start_date %></h3>
+        <h3>End date: <%= trip.end_date %></h3>
+      </div>
+      <div class="message-status" id="trips">
+        <p> <%= trip.status %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+</section>
+
 

@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def trips
     if current_user
-      @my_trips = current_user.booking
+      @my_trips = current_user.bookings
     else
       redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
@@ -15,7 +15,8 @@ class PagesController < ApplicationController
 
   def places
     if current_user
-      @my_flats = current_user.flat
+      # this is an array of all your places/flats
+      @my_flats = current_user.flats
     else
       redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
@@ -23,9 +24,22 @@ class PagesController < ApplicationController
 
   def bookings
     if current_user
-      @my_bookings = current_user.flat.booking
+      # this is an array of all your reservations, as a host
+      @all_my_bookings = []
+      @my_bookings = []
+      @my_flats = current_user.flats
+      @my_flats.each do |flat|
+        @all_my_bookings << flat.bookings
+      end
+      @all_my_bookings.each do |bookings|
+        bookings.each do |booking|
+          @my_bookings << booking
+        end
+      end
     else
       redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
+    # raise
   end
+
 end

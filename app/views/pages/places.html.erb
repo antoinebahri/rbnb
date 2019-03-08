@@ -1,0 +1,21 @@
+<section style="margin-top: 30px;">
+  <div class="container">
+    <div class="row">
+      <%= render 'bookings_tabs' %>
+
+<div class="dash-container">
+  <% @my_flats.each do |flat| %>
+    <div class="dash-card">
+      <div class="dash-pic-data">
+        <div class="dash-pic" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.2) 50%), url('<%= cl_image_path flat.picture, width: 300, height: 200 %>')">
+        </div>
+       <div class="message-body">
+        <p><strong><%=flat.title%></strong></p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</section>
+
+

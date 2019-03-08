@@ -11,5 +11,6 @@ class Flat < ApplicationRecord
   validates :price_night, presence: true
   validates :picture, presence: true
   has_many :users, through: :bookings
+  has_many :bookings
   belongs_to :user
 end

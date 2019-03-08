@@ -1,0 +1,23 @@
+.dash-container{
+  width: auto;
+  height: auto;
+  margin: 10px 150px;
+}
+
+.dash-pic-data {
+  display:flex;
+}
+
+.dash-city-title-type {
+  display:flex;
+}
+
+.dash-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.dash-pic {
+  height: 100px;
+  width: 100%;
+  background-size: cover;
+}
