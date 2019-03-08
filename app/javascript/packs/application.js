@@ -1,2 +1,2 @@
 import "bootstrap";
-// import "calculate-price";
+import "calculate-price";
