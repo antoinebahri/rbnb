@@ -69,3 +69,22 @@
 .status.pending {
   color: lightgrey;
 }
+
+.dash-pic-data {
+  display:flex;
+}
+
+.dash-city-title-type {
+  display:flex;
+}
+
+.dash-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: solid 2px grey;
+}
+
+.dash-pic {
+  height: 230px;
+  width: 450px;
+  background-size: cover;
+}
