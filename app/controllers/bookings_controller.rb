@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    check_for_auth
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
   end
@@ -13,10 +14,12 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    check_for_auth
     @booking = Booking.find(params[:flat_id])
   end
 
   def create
+    check_for_auth
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new(booking_params)
     @booking.flat = @flat
@@ -29,6 +32,7 @@ class BookingsController < ApplicationController
   end
 
   def update
+    check_for_auth
     @booking = Booking.find(params[:flat_id])
     if @booking.update(params)
       redirect_to flat_booking_path(@booking)
@@ -38,6 +42,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    check_for_auth
     @booking = Booking.find(params[:flat_id])
     @booking.destroy
     redirect_to root_path
@@ -45,8 +50,15 @@ class BookingsController < ApplicationController
 
   private
 
-def booking_params
+  def booking_params
     params.require(:booking).permit(:start_date, :end_date)
-end
+  end
+
+  def check_for_auth
+    unless current_user
+      redirect_to new_user_session_path
+    end
+  end
+
 end
 
