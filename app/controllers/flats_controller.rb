@@ -1,8 +1,15 @@
 class FlatsController < ApplicationController
-
   def index
     if params[:query].present?
-      @flats = Flat.where("city ILIKE ?", params[:query])
+      @flats = Flat.where.not(latitude: nil, longitude: nil).where("city ILIKE ?", params[:query])
+
+      @markers = @flats.map do |flat|
+        {
+          lng: flat.longitude,
+          lat: flat.latitude,
+          infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+        }
+      end
     else
       @flats = Flat.all
     end
@@ -13,7 +20,14 @@ class FlatsController < ApplicationController
   end
 
   def show
-    @flat = Flat.find(params[:id])
+    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    @flat = @flats.find(params[:id])
+    @markers =
+      [{
+        lng: @flat.longitude,
+        lat: @flat.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: @flat })
+      }]
   end
 
   def edit
@@ -48,6 +62,6 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit(:title, :address, :city, :price_night, :description, :picture)
+    params.require(:flat).permit(:title, :address, :city, :price_night, :description, :picture, :latitude, :longitude)
   end
 end

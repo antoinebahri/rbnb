@@ -1,0 +1,9 @@
+<% if index?(action_name) %>
+<p style="font-weight: bolder;"><%= flat.title %></p>
+<p><%= flat.address %>, <%= flat.city %></p>
+<p>€<%= flat.price_night %> per night</p>
+<% else %>
+<p style="font-weight: bolder;"><%= @flat.title %></p>
+<p><%= @flat.address %>, <%= @flat.city %></p>
+<p>€<%= @flat.price_night %> per night</p>
+<% end %>

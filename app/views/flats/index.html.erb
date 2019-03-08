@@ -1,4 +1,15 @@
-<h4>Discover your next home</h4>
+<% if !public_page?(action_name) %>
+<br>
+<br>
+<div
+  id="map"
+  style="width: 90%;
+  height: 400px;
+  margin-left: 70px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div><% end %>
+<h4 style="margin-top: 40px;">Discover your next home</h4>
 
 <div class="card-grid">
   <div class="container-cards">
@@ -24,4 +35,5 @@
     </div>
   </div>
 </div>
+
 
