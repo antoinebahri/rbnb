@@ -11,7 +11,6 @@
       <div class="dropdown">
         <%= cl_image_tag current_user.picture, height: 400, width: 400, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: { toggle: 'dropdown' } %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
           <li><%= link_to "Dashboard", dashboard_trips_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         </ul>
@@ -26,8 +25,8 @@
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
+          <li><%= link_to "Dashboard", dashboard_trips_path %></li>
+
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li>
